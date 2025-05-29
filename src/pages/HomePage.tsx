@@ -17,20 +17,19 @@ const featuredDishes = [
   {
     name: "Filet de Boeuf Rossini",
     description: "Tendreté et saveurs exquises, foie gras poêlé, sauce truffée.",
-    // Using a different image, will add crossorigin attribute in the JSX
     image: "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&w=600", 
     price: "32€"
   },
   {
     name: "Risotto aux Cèpes Frais",
     description: "Crémosité du riz Arborio, parfum boisé des cèpes de saison.",
-    image: "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600", // Changed image
+    image: "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600",
     price: "24€"
   },
   {
     name: "Moelleux au Chocolat Grand Cru",
     description: "Coeur coulant intense, accompagné de sa glace vanille artisanale.",
-    image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600", // Changed image
+    image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600",
     price: "12€"
   }
 ];
@@ -53,11 +52,11 @@ const testimonials = [
   }
 ];
 
-// Changed hero images
+// Utiliser des images Pexels pour le carrousel héros
 const heroImages = [
-  "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
-  "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
-  "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+  "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 ];
 
 
@@ -65,7 +64,7 @@ const HomePage = () => {
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] -mx-4 md:-mx-6 lg:-mx-8 -mt-8"> {/* Adjusted negative margins for container padding */}
+      <section className="relative h-[70vh] md:h-[80vh] -mx-4 md:-mx-6 lg:-mx-8 -mt-8">
         <Carousel
           opts={{ loop: true }}
           plugins={[Autoplay({ delay: 5000, stopOnInteraction: false })]}
@@ -74,15 +73,17 @@ const HomePage = () => {
           <CarouselContent className="h-full">
             {heroImages.map((src, index) => (
               <CarouselItem key={index} className="h-full">
-                <div
-                  className="h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${src})` }}
+                <img 
+                  src={src} 
+                  alt={`Hero image ${index + 1}`} 
+                  className="w-full h-full object-cover" 
+                  crossOrigin="anonymous" 
                 />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 border-none" />
-          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 border-none" />
+          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 border-none z-10" />
+          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 hover:bg-black/50 border-none z-10" />
         </Carousel>
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white p-4">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif leading-tight mb-4 animate-fade-in-down">
@@ -160,7 +161,7 @@ const HomePage = () => {
                   src={dish.image} 
                   alt={dish.name} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
-                  crossOrigin="anonymous" // Added crossorigin attribute
+                  crossOrigin="anonymous" 
                 />
               </div>
               <CardHeader>
@@ -181,7 +182,7 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-muted/50 -mx-4 md:-mx-6 lg:-mx-8 px-4 py-16"> {/* Adjusted negative margins */}
+      <section className="bg-muted/50 -mx-4 md:-mx-6 lg:-mx-8 px-4 py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold font-serif text-center mb-10">Ce que nos clients disent</h2>
           <Carousel 
@@ -210,8 +211,8 @@ const HomePage = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-[-25px] sm:left-[-40px]" /> {/* Adjusted for responsiveness */}
-            <CarouselNext className="right-[-25px] sm:right-[-40px]" /> {/* Adjusted for responsiveness */}
+            <CarouselPrevious className="left-[-25px] sm:left-[-40px]" />
+            <CarouselNext className="right-[-25px] sm:right-[-40px]" />
           </Carousel>
         </div>
       </section>
