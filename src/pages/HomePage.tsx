@@ -63,8 +63,8 @@ const heroImages = [
 const HomePage = () => {
   return (
     <div className="space-y-16 md:space-y-24">
-      {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] -mx-4 md:-mx-6 lg:-mx-8 -mt-8">
+      {/* Hero Section - MODIFIED for full viewport width */}
+      <section className="relative w-screen h-[70vh] md:h-[80vh] -mt-8 left-1/2 -translate-x-1/2">
         <Carousel
           opts={{ loop: true }}
           plugins={[Autoplay({ delay: 5000, stopOnInteraction: false })]}
