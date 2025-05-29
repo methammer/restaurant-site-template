@@ -17,20 +17,20 @@ const featuredDishes = [
   {
     name: "Filet de Boeuf Rossini",
     description: "Tendreté et saveurs exquises, foie gras poêlé, sauce truffée.",
-    // Replaced image URL
-    image: "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=600", 
+    // Using a different image, will add crossorigin attribute in the JSX
+    image: "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&w=600", 
     price: "32€"
   },
   {
     name: "Risotto aux Cèpes Frais",
     description: "Crémosité du riz Arborio, parfum boisé des cèpes de saison.",
-    image: "https://images.pexels.com/photos/128401/pexels-photo-128401.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600", // Changed image
     price: "24€"
   },
   {
     name: "Moelleux au Chocolat Grand Cru",
     description: "Coeur coulant intense, accompagné de sa glace vanille artisanale.",
-    image: "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600", // Changed image
     price: "12€"
   }
 ];
@@ -53,10 +53,11 @@ const testimonials = [
   }
 ];
 
+// Changed hero images
 const heroImages = [
-  "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
-  "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
-  "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+  "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+  "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+  "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
 ];
 
 
@@ -155,7 +156,12 @@ const HomePage = () => {
           {featuredDishes.map((dish, index) => (
             <Card key={index} className="overflow-hidden group">
               <div className="aspect-video overflow-hidden">
-                <img src={dish.image} alt={dish.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img 
+                  src={dish.image} 
+                  alt={dish.name} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                  crossOrigin="anonymous" // Added crossorigin attribute
+                />
               </div>
               <CardHeader>
                 <CardTitle className="font-serif text-xl">{dish.name}</CardTitle>
