@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, Leaf, Wheat, Fish, Drumstick, Cake, Wine, Info, Utensils } from "lucide-react"; // Added Utensils
+import { Download, Leaf, Wheat, Fish, Drumstick, Cake, Info, Utensils } from "lucide-react"; // Removed Wine
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // Dummy data - replace with actual data
