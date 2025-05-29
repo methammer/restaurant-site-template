@@ -17,7 +17,8 @@ const featuredDishes = [
   {
     name: "Filet de Boeuf Rossini",
     description: "Tendreté et saveurs exquises, foie gras poêlé, sauce truffée.",
-    image: "https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=600",
+    // Replaced image URL
+    image: "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=600", 
     price: "32€"
   },
   {
