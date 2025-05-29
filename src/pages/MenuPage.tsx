@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, Leaf, Wheat, Fish, Drumstick, Cake, Info, Utensils } from "lucide-react"; // Removed Wine
+import { Download, Leaf, Wheat, Fish, Drumstick, Cake, Info, Utensils } from "lucide-react"; // Assurez-vous que 'Wine' n'est pas ici
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // Dummy data - replace with actual data
@@ -36,7 +36,7 @@ interface MenuCategory {
 const menuData: MenuCategory[] = [
   {
     name: "Entrées",
-    icon: Utensils, // Now correctly uses imported Utensils
+    icon: Utensils,
     items: [
       { id: "e1", name: "Velouté de Saison", description: "Selon l'inspiration du marché, servi avec croûtons à l'ail.", price: "12€", image: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=400", allergenIds: ['vegetarian'] },
       { id: "e2", name: "Foie Gras de Canard Mi-Cuit", description: "Chutney de figues maison, pain d'épices toasté.", price: "18€", image: "https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg?auto=compress&cs=tinysrgb&w=400" },
