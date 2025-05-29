@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import HomePage from './pages/HomePage';
 import MenuPage from './pages/MenuPage';
@@ -6,8 +6,7 @@ import AboutPage from './pages/AboutPage';
 import ReservationsPage from './pages/ReservationsPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
-import { Toaster } from "@/components/ui/sonner"
-import { ThemeProvider } from "@/components/theme-provider"; // We'll create this
+import { ThemeProvider } from "@/components/theme-provider"; // Import ThemeProvider
 
 function App() {
   return (
@@ -17,15 +16,14 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/menu" element={<MenuPage />} />
-            <Route path="/a-propos" element={<AboutPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/reservations" element={<ReservationsPage />} />
-            <Route path="/galerie" element={<GalleryPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            {/* TODO: Add a 404 Not Found page */}
+            {/* Add other routes here */}
           </Routes>
         </Layout>
       </Router>
-      <Toaster richColors position="top-right" />
     </ThemeProvider>
   );
 }

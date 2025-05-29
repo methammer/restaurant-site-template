@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Leaf, Award, Star, ChefHat, MapPin, Phone } from 'lucide-react'; // Removed Utensils, Users
+import { Leaf, Award, Star, ChefHat, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import {
   Carousel,
@@ -17,19 +17,19 @@ const featuredDishes = [
   {
     name: "Filet de Boeuf Rossini",
     description: "Tendreté et saveurs exquises, foie gras poêlé, sauce truffée.",
-    image: "https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=600", // Placeholder
+    image: "https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=600",
     price: "32€"
   },
   {
     name: "Risotto aux Cèpes Frais",
     description: "Crémosité du riz Arborio, parfum boisé des cèpes de saison.",
-    image: "https://images.pexels.com/photos/128401/pexels-photo-128401.jpeg?auto=compress&cs=tinysrgb&w=600", // Placeholder
+    image: "https://images.pexels.com/photos/128401/pexels-photo-128401.jpeg?auto=compress&cs=tinysrgb&w=600",
     price: "24€"
   },
   {
     name: "Moelleux au Chocolat Grand Cru",
     description: "Coeur coulant intense, accompagné de sa glace vanille artisanale.",
-    image: "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=600", // Placeholder
+    image: "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=600",
     price: "12€"
   }
 ];
@@ -63,7 +63,7 @@ const HomePage = () => {
   return (
     <div className="space-y-16 md:space-y-24">
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] -mx-4 -mt-8">
+      <section className="relative h-[70vh] md:h-[80vh] -mx-4 md:-mx-6 lg:-mx-8 -mt-8"> {/* Adjusted negative margins for container padding */}
         <Carousel
           opts={{ loop: true }}
           plugins={[Autoplay({ delay: 5000, stopOnInteraction: false })]}
@@ -173,8 +173,8 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section (Optional) */}
-      <section className="bg-muted/50 -mx-4 px-4 py-16">
+      {/* Testimonials Section */}
+      <section className="bg-muted/50 -mx-4 md:-mx-6 lg:-mx-8 px-4 py-16"> {/* Adjusted negative margins */}
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold font-serif text-center mb-10">Ce que nos clients disent</h2>
           <Carousel 
@@ -203,13 +203,13 @@ const HomePage = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-[-50px]" />
-            <CarouselNext className="right-[-50px]" />
+            <CarouselPrevious className="left-[-25px] sm:left-[-40px]" /> {/* Adjusted for responsiveness */}
+            <CarouselNext className="right-[-25px] sm:right-[-40px]" /> {/* Adjusted for responsiveness */}
           </Carousel>
         </div>
       </section>
       
-      {/* Quick Access Info (already in footer, but can be reiterated here if needed) */}
+      {/* Quick Access Info */}
       <section className="text-center">
         <h2 className="text-3xl md:text-4xl font-semibold font-serif mb-6">Prêt à nous rendre visite ?</h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
