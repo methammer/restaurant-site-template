@@ -2,8 +2,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu as MenuIcon, ChefHat } from 'lucide-react'; // Changed import name for Menu icon
-import { ModeToggle } from './ModeToggle'; // Import ModeToggle
+import { Menu as MenuIcon, ChefHat } from 'lucide-react';
+import { ThemeSwitcher } from './ThemeSwitcher'; // Corrected: Use named import
 
 const navLinks = [
   { href: '/', label: 'Accueil' },
@@ -40,12 +40,12 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-2">
-          <ModeToggle /> 
+          <ThemeSwitcher /> {/* Add ThemeSwitcher here */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
-                  <MenuIcon className="h-6 w-6" /> {/* Changed to MenuIcon */}
+                  <MenuIcon className="h-6 w-6" />
                   <span className="sr-only">Ouvrir le menu</span>
                 </Button>
               </SheetTrigger>
